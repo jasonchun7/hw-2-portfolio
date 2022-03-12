@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+:root {
+    --clr-light: white;
+    --clr-dark: rgb(9, 15, 97);
+    --clr-accent: rgb(3, 0, 169);
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color:rgb(103, 104, 122);
+    font-family: "Raleway", sans-serif;
+}
+
+/* Navigation and header */
+
+.navlinks li, a, button {
+    font-weight: 500;
+    font-size: 25px;
+    color: var(--clr-light);
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    height: 150px;
+}
+
+.navlinks {
+    list-style: none;
+}
+
+.navlinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navlinks li a:hover {
+    color:rgba(0, 17, 253, 0.8);
+}
+
+button {
+    margin-left: 20px;
+    margin-right: 30px;
+    padding: 9px 25px;
+    background-color: var(--clr-accent);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+}
