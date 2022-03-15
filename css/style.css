@@ -14,6 +14,8 @@
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+
+    --bs: .25em .25em .75em rgba(0,0,0,.25);
 }
 
 @media (min-width: 800px) {
@@ -29,30 +31,81 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color:rgb(103, 104, 122);
     font-family: "Raleway", sans-serif;
 }
 
-/* Navigation and header */
+/* General styles */
 
-.navlinks li, a, button {
-    font-weight: 500;
-    font-size: 25px;
-    color: var(--clr-light);
-    text-decoration: none;
+body {
+    margin: 0;
+    line-height: 1.6;
+    background-color:rgb(103, 104, 122);
+    font-size: var(--fs-body);
 }
+
+img {
+    display: block;
+    width: 500px;
+    height: 450px;
+    max-width: 100%;
+}
+
+/* Typography */
+
+h1, h2, h3 {
+    line-height: 1;
+    margin: 0;
+    color: var(--clr-accent);
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+section {
+    padding: 3em 1em;
+}
+
+.section-title {
+    margin-bottom: .25rem;
+}
+
+.section-subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section-subtitle-intro,
+.section-subtitle-about {
+    background-color: var(--clr-accent);
+    margin-bottom: 1em;
+
+}
+
+.intro, .about-me, .my-work {
+    color: var(--clr-light)
+}
+
+p {
+    font-size: var(--fs-body);
+}
+
+/* Navigation and header */
 
 header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px 10px;
-}
-
-.logo {
-    cursor: pointer;
-    margin-right: auto;
-    height: 150px;
+    padding: 7px 7px;
+    margin-top: 0px;
 }
 
 .navlinks {
@@ -64,8 +117,22 @@ header {
     padding: 0px 20px;
 }
 
+.navlinks li, a, button {
+    font-weight: 500;
+    font-size: 25px;
+    color: var(--clr-light);
+    text-decoration: none;
+}
+
 .navlinks li a:hover {
     color:rgba(0, 17, 253, 0.8);
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
 }
 
 button {
@@ -83,8 +150,160 @@ button:hover {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
-body {
-    margin: 0;
-    line-height: 1.6;
+/* Introduction */
+
+.intro {
+    position: relative;
 }
 
+.intro-img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 800px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro-img {
+        grid-area: img;
+        min-width: 250px;
+    }
+
+    .section-subtitle-intro {
+        align-self: start;
+        margin-top: 0px;
+    }
+
+}
+
+.intro-img {
+    grid-area: img;
+    width: 500px;
+    height: 400px;
+}
+
+.section-title-intro strong {
+    display: block;
+    font-weight: 1000;;
+    color: var(--clr-light);
+}
+
+/* About Me */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me-img {
+    box-shadow: var(--bs);
+    width: 900px;
+    height: 500px;
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+    }
+
+    .section-title-about {
+        grid-area: title;
+        padding-bottom: 0px;
+    }
+
+    .about-me-img {
+        grid-area: img;
+    }
+}
+
+/* My Work */
+
+.my-work {
+    text-align: center;
+}
+
+.portfolio-img {
+    position: relative;
+    display: inline-block;
+    justify-content: space-evenly;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+}
+
+.portfolio-item {
+    overflow: hidden;
+}
+
+.portfolio-img {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}
+
+.portfolio-img:hover {
+    transform: scale(1.2);
+    opacity: .75;
+}
+
+/* Footer */
+
+footer {
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-link {
+    font-size: var(--fs-h3);
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-link:hover,
+.social-list-link:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+}
+
+.social-list-item {
+    margin: 0 .5em;
+    font-size: var(--fs-h2);
+}
+
+.social-list-link {
+    padding: .5em;
+}
