@@ -8,7 +8,7 @@
 :root {
     --clr-light: white;
     --clr-dark: rgb(9, 15, 97);
-    --clr-accent: rgb(3, 0, 169);
+    --clr-accent: #05b4a9;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -39,7 +39,7 @@
 body {
     margin: 0;
     line-height: 1.6;
-    background-color:rgb(103, 104, 122);
+    background-color: black;
     font-size: var(--fs-body);
 }
 
