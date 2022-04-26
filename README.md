@@ -32,11 +32,22 @@ WHEN I resize the page or view the site on various screens and devices
 THEN I am presented with a responsive layout that adapts to my viewport
 ```
 
+## Installation
+
+Here is my Github Repo and the Deployed Link:
+- [Github Repo](https://github.com/jasonchun7/hw-2-portfolio)
+- [Deployed Link](https://jasonchun7.github.io/hw-2-portfolio/)
+
 ## Usage
 
 I've tried to make my first portfolio page the most user friendly as I can, with a simple navigation bar, 3 sections containing an intro, about me, and my work, and a footer with my contact information.
 
-![portfolio](images/Screen Shot 2022-03-15 at 4.26.36 PM.png)
+![portfolio](images/landingpage.png)
+
+## Features & Technologies
+
+- From the navigation bar, clicking on one of the four buttons will take you to that section of the page.
+- Mobile-First approach where the text and images will change layout for different screen sizes, respectively.
 
 ## Credits 
 
